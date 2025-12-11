@@ -87,7 +87,7 @@ resource "aws_instance" "webserver1" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.webSg.id]
   subnet_id              = aws_subnet.sub1.id
-  user_data              = base64encode(file("userdata.sh"))
+  user_data_base64              = base64encode(file("userdata.sh"))
 }
 
 resource "aws_instance" "webserver2" {
@@ -95,7 +95,7 @@ resource "aws_instance" "webserver2" {
   instance_type          = "t3.micro"
   vpc_security_group_ids = [aws_security_group.webSg.id]
   subnet_id              = aws_subnet.sub2.id
-  user_data              = base64encode(file("userdata1.sh"))
+  user_data_base64             = base64encode(file("userdata1.sh"))
 }
 
 #create alb
