@@ -14,7 +14,7 @@ module "ec2" {
   source        = "./modules/ec2-instances"
   ami           = "ami-02ddb77f8f93ca4ca"
   instance_type = "t2.micro"
-  subnet_id     = module.vpc.public_subnet_ids[0]
+  subnet_id     = module.vpc.public_subnet_id
   instance_name = "Web-Server"
 }
 
