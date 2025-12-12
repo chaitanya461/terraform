@@ -13,7 +13,7 @@ module "vpc" {
 module "ec2" {
   source        = "./modules/ec2-instances"
   ami           = "ami-02ddb77f8f93ca4ca"
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
   subnet_id     = module.vpc.public_subnet_id
   instance_name = "Web-Server"
 }
@@ -21,8 +21,7 @@ module "ec2" {
 # Create S3 Bucket
 module "s3" {
   source      = "./modules/s3-bucket"
-  bucket_name = "my-awesome-bucket-reya"
-  acl         = "private"
+  bucket_name = "my-awesome-bucket-satya123"
 }
 
 output "ec2_public_ip" {
